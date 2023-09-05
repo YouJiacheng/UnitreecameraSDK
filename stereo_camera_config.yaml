@@ -29,7 +29,7 @@ DeviceNode: !!opencv-matrix
    rows: 1
    cols: 1
    dt: d
-   data: [ 0. ]
+   data: [ 1. ]
 #fov (perspective 60~140) 
 hFov: !!opencv-matrix
    rows: 1
@@ -41,7 +41,7 @@ FrameSize: !!opencv-matrix
    rows: 1
    cols: 2
    dt: d
-   data: [928.,400.] 
+   data: [1856.,800.] 
 #   [232.,200.] [464.,400.] [928.,800.] 
 RectifyFrameSize: !!opencv-matrix
    rows: 1
