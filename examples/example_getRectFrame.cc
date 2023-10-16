@@ -48,7 +48,8 @@ int main(int argc, char *argv[]){
         // cv::flip(right,right, -1);
         cv::hconcat(left, right, stereo); 
         cv::flip(stereo,stereo, -1);
-        cv::imshow("Longlat_Rect", stereo);
+        // cv::imshow("Longlat_Rect", stereo);
+        cv::imwrite("test.jpg", stereo);
         char key = cv::waitKey(10);
         if(key == 27) // press ESC key
            break;

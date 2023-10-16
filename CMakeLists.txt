@@ -33,3 +33,6 @@ set(SDKLIBS unitree_camera tstc_V4L2_xu_camera udev systemlog ${OpenCV_LIBS})
 # add_subdirectory(${PROJECT_SOURCE_DIR}/examples)
 add_executable(rawFrameTrans ./rawFrameTrans.cc)
 target_link_libraries(rawFrameTrans ${SDKLIBS})
+
+add_executable(rectFrameTrans ./rectFrameTrans.cc)
+target_link_libraries(rectFrameTrans ${SDKLIBS})

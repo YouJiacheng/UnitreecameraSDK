@@ -1,2 +1,6 @@
 bins
 build
+test_frames*
+*.jpg
+*.png
+*.mp4

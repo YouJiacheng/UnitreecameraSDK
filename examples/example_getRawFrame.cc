@@ -51,7 +51,8 @@ int main(int argc, char *argv[]){
         frame(cv::Rect(0, 0, frame.size().width/2, frame.size().height)).copyTo(right);
         frame(cv::Rect(frame.size().width/2,0, frame.size().width/2, frame.size().height)).copyTo(left);
         cv::hconcat(left, right, frame); 
-        cv::imshow("UnitreeCamera_Left-Right", frame);
+        // cv::imshow("UnitreeCamera_Left-Right", frame);
+        cv::imwrite("test.jpg", frame);
         char key = cv::waitKey(10);
         if(key == 27) // press ESC key
            break;

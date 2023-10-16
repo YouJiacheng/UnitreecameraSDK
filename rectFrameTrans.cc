@@ -18,15 +18,29 @@ int main(int argc, char *argv[]){
     cam.startCapture(); ///< disable image h264 encoding and share memory sharing
 
     while(cam.isOpened()){
-        std::chrono::microseconds t;
-        cv::Mat stereo;
-        if(!cam.getRawFrame(stereo, t)){
+        // std::chrono::microseconds t;
+
+        cv::Mat left, right/*, feim*/;
+        if(!cam.getRectStereoFrame(left, right/*, feim, t*/)){
             usleep(1000);
             continue;
         }
-        cv::Mat right;
-        stereo(cv::Rect(0, 0, stereo.size().width / 2, stereo.size().height)).copyTo(right);
-        writer << right;
+        cv::Mat left_flipped;
+
+
+        cv::flip(left, left_flipped, -1);
+        writer << left_flipped;
+        
+        // cv::Mat stereo;
+        // if(!cam.getRawFrame(stereo, t)){
+        //     usleep(1000);
+        //     continue;
+        // }
+        // cv::Mat left, right;
+        // stereo(cv::Rect(0, 0, stereo.size().width / 2, stereo.size().height)).copyTo(right);
+        // stereo(cv::Rect(stereo.size().width / 2, 0, stereo.size().width / 2, stereo.size().height)).copyTo(left);
+        // cv::hconcat(left, right, stereo);
+        // writer << stereo;
     }
 
     cam.stopCapture();  ///< stop camera capturing
