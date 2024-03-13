@@ -30,6 +30,10 @@ int main(int argc, char *argv[]){
 
         cv::flip(left, left_flipped, -1);
         writer << left_flipped;
+
+        cv::Mat right_flipped;
+        cv::flip(right, right_flipped, -1);
+        writer << right_flipped;
         
         // cv::Mat stereo;
         // if(!cam.getRawFrame(stereo, t)){
